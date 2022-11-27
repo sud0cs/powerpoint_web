@@ -8,7 +8,6 @@ body{
 	height: 100%;
 	width: 100%;
 	margin: 0;
-
 }
 div{
 	height: 80%;
@@ -16,8 +15,9 @@ div{
 }
 p{
 	font-family: roboto;
-	color: white;
-	font-size: 18px;
+	color: black;
+	font-size: 25px;
+	margin-bottom: 1px;	
 }
 .diapositiva{
 	position: absolute;
@@ -28,13 +28,27 @@ p{
 	border-radius: 20px;
 	box-shadow: 5px 5px 20px;
 	transition: 1s;
-	z-index: 1;
 }
 h1{
-	color: white;
+	color: black;
 	font-size: 70px;
 	text-shadow: 5px 5px 10px black;
 	transition: 0.5s;
+}
+h2{
+	color: black;
+	font-size: 30px;
+	text-shadow: 2px 2px 5px black;
+	transition: 0.5s;
+}
+#bg{
+	background-image: url("bg.png");
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	filter: blur(5px) brightness(90%);
+	box-shadow: none;
+	transition: 1s;
 }
 #mainTitle{
 	text-transform: uppercase;
@@ -49,7 +63,7 @@ h1{
 	background-clip: border-box;
 	background-size: 200% auto;
 	background-clip: text;
-	text-fill-color: transparent;
+	color: rgba(0,0,0,0);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: textclip 2s linear infinite;
@@ -60,6 +74,11 @@ h1{
 @keyframes textclip {
 	to {
 		background-position: 200% center;
+	}
+}
+@keyframes bgHue {
+	to{
+		filter: hue-rotate(200deg);
 	}
 }
 .hide{
@@ -109,6 +128,16 @@ img{
 	overflow: hidden;
 	transition: 1s;
 }
+.inner p{
+	margin-top: 20px;
+}
+.inner:not(:first-child) *{
+	width: 86%;
+	position: relative;
+	right: 0%;
+	left: 100%;
+	transition: 0.5s;
+}
 #d1{
 	display: flex;
 	align-items: center;
@@ -116,6 +145,10 @@ img{
 	justify-content: center;
 }
 #d2{
+	/*background-image: url("bg.png");
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;*/
 	left: 100%;
 }
 #d2 h1{
@@ -123,11 +156,7 @@ img{
 	left: 100%;
 }
 #d2 *{
-	width: 86%;
-	position: relative;
-	right: 0%;
-	left: 100%;
-	transition: 0.5s;
+	color: black;
 }
 #d3{
 	left: 100%;
@@ -137,9 +166,26 @@ img{
 	left: 100%;
 }
 #d3 *{
-	width: 86%;
-	position: relative;
-	right: 0%;
+	display: inline-block;
+}
+#d4{
 	left: 100%;
-	transition: 0.5s;
+}
+.inner *{
+}
+#exemples{
+	height: 65%;
+	display: flex;
+	justify-content: space-evenly;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+#exemples h1{
+	font-size: 20px;
+}
+#goodgui, #badgui{
+	border-radius: 20px;
+	max-width: 35%;
 }
